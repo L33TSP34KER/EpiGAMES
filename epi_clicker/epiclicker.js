@@ -34,6 +34,14 @@
 
     function clickButton() {
         epicoin += 1;
+        var btn = document.getElementById('click');
+        var s = btn.parentElement;
+    
+        var clone = btn.cloneNode(true);
+        s.appendChild(clone);
+        btn.remove()
+    
+        document.getElementById('click').addEventListener('click', clickButton);
         complete_quest(1, 1);
         updateDisplay();
         writeCode();
